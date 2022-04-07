@@ -2,12 +2,12 @@ let arr = [
   [1, 2, 3, 4], 
   [5, 6, 7, 8],
   [9, 10, 11, 12]
-]
+];
 
 function minPathSum(arr){ 
   let cols = arr[0].length;
   let rows = arr.length;
-  let leftDown = Array(rows).fill(Array(cols).fill());
+  let leftDown = Array(rows).fill(Array(cols).fill(0));
   leftDown[0][0] = arr[0][0];
   
   for(let i = 1; i < cols; i++){
@@ -27,4 +27,5 @@ function minPathSum(arr){
   return leftDown[rows-1][cols-1];
 }
 
+console.table(arr);
 console.log(minPathSum(arr));
